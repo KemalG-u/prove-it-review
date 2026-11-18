@@ -12,7 +12,7 @@ import sample_bound  # noqa: E402
 
 class TestUpperBound(unittest.TestCase):
     def test_reference_values_at_95_percent(self):
-        # Hand-checked: 1 - 0.05 ** (1 / n)
+        # Independently computed by the AI tool (outside the script): 1 - 0.05 ** (1 / n)
         for n, expected in [(10, 0.2589), (20, 0.1391), (40, 0.0722), (100, 0.0295)]:
             with self.subTest(n=n):
                 self.assertAlmostEqual(sample_bound.upper_bound(n), expected, places=4)

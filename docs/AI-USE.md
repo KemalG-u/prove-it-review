@@ -6,7 +6,7 @@ Maintainer: Kemal (KarıncaAI) · Record: reconstructed on 2026-11-18 (drafted b
 
 ## Summary
 
-The text, code, tests and documents in this repository were written by an AI coding agent (Claude Code) working from instructions of the maintainer. The project is a generalised extraction of a skill and a subagent definition that began in the maintainer's own private agent setup. The maintainer's statement of 2026-11-18, in his own summary: "I directed, the AI wrote." He set the rule and the idea behind the skill (look at the work adversarially and demand proof); the text of the original skill and subagent definition was written by Claude Code or Codex under his direction. Which of the two tools wrote which file, and with which model, is not recorded.
+The text, code, tests and documents in this repository were written by an AI coding agent (Claude Code) working from instructions of the maintainer. The project is a generalised extraction of a skill and a subagent definition that began in the maintainer's own private agent setup. Summary of the maintainer's answer of 2026-11-18 (a paraphrase, not a verbatim quote): he directed the work and the AI wrote it. He set the rule and the idea behind the skill (look at the work adversarially and demand proof); the text of the original skill and subagent definition was written by Claude Code or Codex under his direction. Which of the two tools wrote which file, and with which model, is not recorded.
 
 ## Tools and models
 
@@ -40,7 +40,7 @@ The text, code, tests and documents in this repository were written by an AI cod
 | Claim | Verification | Evidence |
 |---|---|---|
 | The unit tests pass | Run by the AI tool with `python -B -m unittest discover -s tests` on Windows, Python 3.12. CI (Linux, Python 3.12) is configured but its first run is recorded only after publication | [METRICS.md](METRICS.md); state of CI in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 7 |
-| The sample-bound numbers in the skill are right | A test compares the numbers quoted in the skill with the script; the formula values were also computed by hand for n = 10, 20, 40 and 100 | `tests/test_examples.py::TestShippedFiles::test_skill_numbers_match_the_script`, `tests/test_sample_bound.py` |
+| The sample-bound numbers in the skill are right | A test compares the numbers quoted in the skill with the script; the formula values for n = 10, 20, 40 and 100 were also computed independently by the AI tool | `tests/test_examples.py::TestShippedFiles::test_skill_numbers_match_the_script`, `tests/test_sample_bound.py` |
 | The worked example's review is true | A test runs the cited commands and checks the cited line numbers | `tests/test_examples.py::TestWorkedExample` |
 | No secrets or personal data in the tree and history | Betterleaks, TruffleHog, and a script for local paths and e-mail addresses | [PRIVACY-CHECK.md](PRIVACY-CHECK.md) |
 | README example works | `python3 skills/prove-it-review/scripts/sample_bound.py 40` run by the AI tool | [PROCESS.md](PROCESS.md) "Verification" |
@@ -59,7 +59,7 @@ AI involvement is marked with an `Assisted-by: Claude Code` trailer in commits (
 
 ## Copyright note
 
-Copyright rests on human creative contribution. The maintainer's statement of 2026-11-18 (conversation): his contribution is the idea and the rule, and the direction of the work ("I directed, the AI wrote"); the text was written by AI tools (Claude Code, Codex) under his direction, and nothing here is claimed as human-written. `Interpretation:` Purely machine-generated passages may not be protected; this project does not claim otherwise.
+Copyright rests on human creative contribution. The maintainer's statement of 2026-11-18 (conversation): his contribution is the idea and the rule, and the direction of the work (summary of his answer, not a verbatim quote: he directed, the AI wrote); the text was written by AI tools (Claude Code, Codex) under his direction, and nothing here is claimed as human-written. `Interpretation:` Purely machine-generated passages may not be protected; this project does not claim otherwise.
 
 ## Limits of this record
 
