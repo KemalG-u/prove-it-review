@@ -1,7 +1,7 @@
 ---
-status: "proposed"
+status: "accepted"
 date: 2026-11-18
-decision-makers: drafted by Claude Code during the extraction; the maintainer confirms (KEMAL-VERIFY: confirm or change this decision)
+decision-makers: Kemal (maintainer), approved 2026-11-18; drafted by Claude Code during the extraction
 consulted: Claude Code and Codex documentation (read 2026-11-18)
 ---
 

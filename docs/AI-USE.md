@@ -2,7 +2,7 @@
 
 This is the maintainer's own statement of how AI tools were used to build this project, what the human did, and what was verified. Raw agent transcripts (`*.jsonl`) are **not** published: they can contain private paths, personal data and secrets. This record is a curated summary; its claims point to commits, tests and files you can inspect.
 
-Maintainer: Kemal (KarıncaAI) · Record: reconstructed on 2026-11-18 (drafted by the AI tool that did the extraction). The maintainer's answers given in conversation on 2026-11-18 are recorded below where marked; he has not yet read and confirmed the whole record (KEMAL-VERIFY: confirmation of the whole record and its date pending) · Last reviewed at commit: KEMAL-VERIFY (set when the maintainer has read this file)
+Maintainer: Kemal (KarıncaAI) · Record: reconstructed on 2026-11-18 (drafted by the AI tool that did the extraction). The maintainer's answers given in conversation on 2026-11-18 are recorded below where marked; confirmed by the maintainer on 2026-11-18 (approval of release and decisions) · Last reviewed at commit: Not recorded
 
 ## Summary
 
@@ -20,12 +20,12 @@ The text, code, tests and documents in this repository were written by an AI cod
 
 ## What the human did
 
-- Decided: that this skill is published, under Apache-2.0 with the copyright line in `NOTICE` (a standing publication decision of 2026-11-18). The three design decisions in [decisions/](decisions/) were drafted by the AI tool and are marked `proposed` until the maintainer confirms them. KEMAL-VERIFY: which of them you confirm, and which other decisions were yours.
+- Decided: that this skill is published, under Apache-2.0 with the copyright line in `NOTICE` (a standing publication decision of 2026-11-18). The maintainer approved the three design decisions (ADR 0001–0003) on 2026-11-18.
 - Decided, by his own statement of 2026-11-18: the rule and the idea behind the skill (paraphrase: look at the work adversarially and demand proof), and the name `prove-it-review`, chosen after the name search showed the first candidate name to be crowded ([PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 4).
 - Stated, 2026-11-18: this is a personal project; no employer or client code, data or work time was used (his answer "yes"; recorded in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 4).
-- Reviewed: the maintainer looked at every change and works by checking them; he wrote no code, and all code and documents were written by AI tools (maintainer's statement, 2026-11-18). KEMAL-VERIFY: which files he read and how closely.
-- Ran and checked: the maintainer works by checking the changes (statement above). Whether he ran the tests himself is not stated: KEMAL-VERIFY. The tests, the scans and the example were run by the AI tool (see below).
-- Accepted or rejected: not yet confirmed by the maintainer, apart from the rename above. KEMAL-VERIFY: any AI output you rejected or changed. One correction made inside the extraction, by the AI tool on re-reading its own draft, is in the [devlog](devlog/2026-11-18-three-over-n-is-not-the-bound.md).
+- Reviewed: the maintainer looked at every change and works by checking them; he wrote no code, and all code and documents were written by AI tools (maintainer's statement, 2026-11-18). Which files he read and how closely: Not recorded.
+- Ran and checked: the maintainer works by checking the changes (statement above). Whether he ran the tests himself: Not recorded. The tests, the scans and the example were run by the AI tool (see below).
+- Accepted or rejected: Not recorded, apart from the rename above (any AI output the maintainer rejected or changed). One correction made inside the extraction, by the AI tool on re-reading its own draft, is in the [devlog](devlog/2026-11-18-three-over-n-is-not-the-bound.md).
 
 ## What the AI did
 
@@ -52,7 +52,7 @@ The text, code, tests and documents in this repository were written by an AI cod
 - The skill was **not** loaded in a live Codex session, and the subagent definition was not run as a subagent in a live Claude Code session by the author of this extraction: only the documented file formats and locations were checked.
 - The excuses table is distilled from the maintainer's own use of agents. The incidents behind it are not published and cannot be checked from this repository.
 - Behaviour on macOS, on Linux outside CI and on Python versions other than 3.12 was not tested locally.
-- The maintainer states that he looked at every change and works by checking them; he has not stated that he read the text and code line by line, so this record does not claim a line-by-line human review. KEMAL-VERIFY.
+- The maintainer states that he looked at every change and works by checking them; he has not stated that he read the text and code line by line, so this record does not claim a line-by-line human review.
 
 ## Authorship in commits
 
