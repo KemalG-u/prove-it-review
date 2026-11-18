@@ -24,7 +24,7 @@ This file is also the single place for statements about the hosted repository (C
 | TruffleHog (`--no-verification --no-update`, git mode) | 3.99.9 | history @ `37ebc1b` | 17 (54 chunks, 95,018 bytes) | 0 (0 verified, 0 unverified) | 0 / 0 | 0 |
 | TruffleHog (`--no-verification --no-update`, filesystem mode) | 3.99.9 | working tree @ `37ebc1b` | not applicable (tree) | 0 (0 verified, 0 unverified) | 0 / 0 | 0 |
 
-Positive control: a scratch repository outside this repository with one commit containing a randomly generated GitHub-token-shaped string. Betterleaks reported 1 finding in git mode and 1 in dir mode; TruffleHog reported 1 unverified finding in git mode (detector `Github`) and 2 in filesystem mode (the filesystem scan also reads the control repository's `.git` data). Both scanners therefore work on this machine with these flags. The control value was generated at run time and never printed or stored in this repository; the scratch repository was deleted afterwards.
+Positive control: a scratch repository outside this repository with one commit containing a randomly generated GitHub-token-shaped string. Betterleaks reported 1 finding in git mode and 1 in dir mode; TruffleHog reported 1 unverified finding in git mode (detector `Github`) and 2 in filesystem mode (the filesystem scan also reads the control repository's `.git` data). Both scanners therefore work on this machine with these flags. The control value was generated at run time and never printed or stored in this repository; the scratch repository is outside this repository and holds only that generated value.
 Findings handling: no findings, so nothing to classify, revoke or clean.
 
 ## 3. Personal data, local paths and agent-specific leaks
