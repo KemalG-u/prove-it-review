@@ -2,11 +2,11 @@
 
 This is the maintainer's own statement of how AI tools were used to build this project, what the human did, and what was verified. Raw agent transcripts (`*.jsonl`) are **not** published: they can contain private paths, personal data and secrets. This record is a curated summary; its claims point to commits, tests and files you can inspect.
 
-Maintainer: Kemal (KarıncaAI) · Record: reconstructed on 2026-11-18 (drafted by the AI tool that did the extraction). The maintainer's answers given in conversation on 2026-11-18 are recorded below where marked. The maintainer approved the release and the three design decisions on 2026-11-18; he has not stated that he read and confirmed this record as a whole. · Last reviewed at commit: Not recorded
+Maintainer: Kemal (KarıncaAI) · Record: reconstructed on 2026-11-18 (drafted by the AI tool that did the extraction). The maintainer's answers given in conversation on 2026-11-18 are recorded below where marked. The maintainer approved the release and the three design decisions on 2026-11-18; the maintainer has not stated having read and confirmed this record as a whole. · Last reviewed at commit: Not recorded
 
 ## Summary
 
-The text, code, tests and documents in this repository were written by an AI coding agent (Claude Code) working from instructions of the maintainer. The project is a generalised extraction of a skill and a subagent definition that began in the maintainer's own private agent setup. Summary of the maintainer's answer of 2026-11-18 (a paraphrase, not a verbatim quote): he directed the work and the AI wrote it. He set the rule and the idea behind the skill (look at the work adversarially and demand proof); the text of the original skill and subagent definition was written by Claude Code or Codex under his direction. Which of the two tools wrote which file, and with which model, is not recorded.
+The text, code, tests and documents in this repository were written by an AI coding agent (Claude Code) working from instructions of the maintainer. The project is a generalised extraction of a skill and a subagent definition that began in the maintainer's own private agent setup. Summary of the maintainer's answer of 2026-11-18 (a paraphrase, not a verbatim quote): the maintainer directed the work and the AI wrote it. The maintainer set the rule and the idea behind the skill (look at the work adversarially and demand proof); the text of the original skill and subagent definition was written by Claude Code or Codex under the maintainer's direction. Which of the two tools wrote which file, and with which model, is not recorded.
 
 ## Tools and models
 
@@ -15,16 +15,16 @@ The text, code, tests and documents in this repository were written by an AI cod
 | Claude Code, delegated sub-agents on Claude Sonnet 5.5 (the model name comes from the session's own system information) | Did the extraction: generalised the skill and the subagent definition, wrote the script, tests, example, README and all documents; ran tests, scanners and checks; also wrote every fix commit made after the independent AI reads below | All code, documents and fixes in the commits of this repository |
 | Claude Code, main session that delegated the tasks, on Claude Opus 5.5 (as stated by that session) | Gave the sub-agents their tasks, constraints and acceptance criteria on behalf of the maintainer, and checked their results | Task definition and checking only; it did not write files here |
 | Claude Code, independent AI readers (fresh-context agents on Claude Opus 5.5) | Read the repository against its own claims and reported findings; each reader returned a findings report only and wrote no file. Three reads, on the trees at `860f7b9`, `d31fdd6` and `29eeb2b`; each found problems that were then fixed by the sub-agents above | Nothing written; findings only |
-| The private original (file times: skill 2026-11-11, subagent definition 2026-10-17) | The source that was generalised. Not published. Written by Claude Code or Codex under the maintainer's direction (his statement of 2026-11-18); which tool and model wrote which file is not recorded | Origin of `skills/prove-it-review/SKILL.md` and `agents/prove-it-reviewer.md` |
+| The private original (file times: skill 2026-11-11, subagent definition 2026-10-17) | The source that was generalised. Not published. Written by Claude Code or Codex under the maintainer's direction (the maintainer's statement of 2026-11-18); which tool and model wrote which file is not recorded | Origin of `skills/prove-it-review/SKILL.md` and `agents/prove-it-reviewer.md` |
 | git-cliff, Betterleaks, TruffleHog (versions in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) and [PROCESS.md](PROCESS.md)) | Changelog generation and secret scanning (tools, not AI) | `CHANGELOG.md`, [PRIVACY-CHECK.md](PRIVACY-CHECK.md) |
 
 ## What the human did
 
 - Decided: that this skill is published, under Apache-2.0 with the copyright line in `NOTICE` (a standing publication decision of 2026-11-18). The maintainer approved the three design decisions (ADR 0001–0003) on 2026-11-18.
-- Decided, by his own statement of 2026-11-18: the rule and the idea behind the skill (paraphrase: look at the work adversarially and demand proof), and the name `prove-it-review`, chosen after the name search showed the first candidate name to be crowded ([PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 4).
-- Stated, 2026-11-18: this is a personal project; no employer or client code, data or work time was used (his answer "yes"; recorded in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 4).
-- Reviewed: the maintainer looked at every change and works by checking them; he wrote no code, and all code and documents were written by AI tools (maintainer's statement, 2026-11-18). Which files he read and how closely: Not recorded.
-- Ran and checked: the maintainer works by checking the changes (statement above). Whether he ran the tests himself: Not recorded. The tests, the scans and the example were run by the AI tool (see below).
+- Decided, by the maintainer's own statement of 2026-11-18: the rule and the idea behind the skill (paraphrase: look at the work adversarially and demand proof), and the name `prove-it-review`, chosen after the name search showed the first candidate name to be crowded ([PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 4).
+- Stated, 2026-11-18: this is a personal project; no employer or client code, data or work time was used (the maintainer's answer "yes"; recorded in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 4).
+- Reviewed: the maintainer looked at every change and works by checking them; the maintainer wrote no code, and all code and documents were written by AI tools (maintainer's statement, 2026-11-18). Which files the maintainer read and how closely: Not recorded.
+- Ran and checked: the maintainer works by checking the changes (statement above). Whether the maintainer ran the tests personally: Not recorded. The tests, the scans and the example were run by the AI tool (see below).
 - Accepted or rejected: Not recorded, apart from the rename above (any AI output the maintainer rejected or changed). One correction made inside the extraction, by the AI tool on re-reading its own draft, is in the [devlog](devlog/2026-11-18-three-over-n-is-not-the-bound.md).
 
 ## What the AI did
@@ -52,7 +52,7 @@ The text, code, tests and documents in this repository were written by an AI cod
 - The skill was **not** loaded in a live Codex session, and the subagent definition was not run as a subagent in a live Claude Code session by the author of this extraction: only the documented file formats and locations were checked.
 - The excuses table is distilled from the maintainer's own use of agents. The incidents behind it are not published and cannot be checked from this repository.
 - Behaviour on macOS, on Linux outside CI and on Python versions other than 3.12 was not tested locally.
-- The maintainer states that he looked at every change and works by checking them; he has not stated that he read the text and code line by line, so this record does not claim a line-by-line human review.
+- The maintainer states having looked at every change and working by checking them; the maintainer has not stated having read the text and code line by line, so this record does not claim a line-by-line human review.
 
 ## Authorship in commits
 
@@ -60,7 +60,7 @@ AI involvement is marked with an `Assisted-by: Claude Code` trailer in commits (
 
 ## Copyright note
 
-Copyright rests on human creative contribution. The maintainer's statement of 2026-11-18 (conversation): his contribution is the idea and the rule, and the direction of the work (summary of his answer, not a verbatim quote: he directed, the AI wrote); the text was written by AI tools (Claude Code, Codex) under his direction, and nothing here is claimed as human-written. `Interpretation:` Purely machine-generated passages may not be protected; this project does not claim otherwise.
+Copyright rests on human creative contribution. The maintainer's statement of 2026-11-18 (conversation): the maintainer's contribution is the idea and the rule, and the direction of the work (summary of the maintainer's answer, not a verbatim quote: the maintainer directed, the AI wrote); the text was written by AI tools (Claude Code, Codex) under the maintainer's direction, and nothing here is claimed as human-written. `Interpretation:` Purely machine-generated passages may not be protected; this project does not claim otherwise.
 
 ## Limits of this record
 
