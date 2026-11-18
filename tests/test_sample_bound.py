@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Tests for scripts/sample_bound.py. Standard library only: python -m unittest discover -s tests"""
+"""Tests for skills/prove-it-review/scripts/sample_bound.py. Standard library only: python -m unittest discover -s tests"""
 import subprocess
 import sys
 import unittest
 from pathlib import Path
 
-SCRIPT = Path(__file__).resolve().parent.parent / "scripts" / "sample_bound.py"
+SCRIPT = Path(__file__).resolve().parent.parent / "skills" / "prove-it-review" / "scripts" / "sample_bound.py"
 sys.path.insert(0, str(SCRIPT.parent))
 import sample_bound  # noqa: E402
 

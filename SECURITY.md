@@ -21,7 +21,7 @@ This is a one-person project maintained on a best-effort basis. The maintainer a
 
 ## Scope
 
-In scope: the Python scripts and tests in this repository (`scripts/`, `tests/`, `examples/`), for example a way to make them execute unintended code or write outside their working directory; and content in the skill or subagent definition that could lead an agent to take a harmful action (for example an instruction that weakens a safety boundary of the host). Out of scope: the fact that the skill is advice that an agent can ignore, that a reviewer on the same model shares the producer's blind spots, and problems in Claude Code, Codex or other agent hosts themselves (see the README "Limits" section).
+In scope: the Python scripts and tests in this repository (`skills/prove-it-review/scripts/`, `tests/`, `examples/`), for example a way to make them execute unintended code or write outside their working directory; and content in the skill or subagent definition that could lead an agent to take a harmful action (for example an instruction that weakens a safety boundary of the host). Out of scope: the fact that the skill is advice that an agent can ignore, that a reviewer on the same model shares the producer's blind spots, and problems in Claude Code, Codex or other agent hosts themselves (see the README "Limits" section).
 
 ## Repository hygiene
 

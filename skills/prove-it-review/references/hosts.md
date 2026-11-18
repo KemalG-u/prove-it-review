@@ -12,4 +12,4 @@
 
 - Skill: copy `skills/prove-it-review/` to `.agents/skills/` in your repository, or `~/.agents/skills/` for all projects (the repository and user locations in the Codex skills documentation). Invoke it by name in the prompt (`$prove-it-review` in the CLI or the IDE extension) or let the description match.
 - The Claude Code subagent file is not used by Codex. For an independent read, start a separate Codex session with a clean context and give it the acceptance criteria and the diff.
-- `Interpretation:` the skill text is host-neutral; it was not loaded in a live Codex session by the author (see [docs/AI-USE.md](../../../docs/AI-USE.md)).
+- `Interpretation:` the skill text is host-neutral; it was not loaded in a live Codex session by the author (see [docs/AI-USE.md](https://github.com/KemalG-u/prove-it-review/blob/main/docs/AI-USE.md)).

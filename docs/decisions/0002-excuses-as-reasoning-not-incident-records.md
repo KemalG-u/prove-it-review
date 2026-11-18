@@ -31,7 +31,7 @@ Chosen option: "keep rows and reasoning, drop incident records", because the res
 
 * Good, because nothing unverifiable is presented as evidence.
 * Bad, because the "why" of each row is weaker than a real incident would be.
-* Neutral, because one number was kept only where this repository can reproduce it (the sample bound, via `scripts/sample_bound.py`).
+* Neutral, because one number was kept only where this repository can reproduce it (the sample bound, via `skills/prove-it-review/scripts/sample_bound.py`).
 
 ### Confirmation
 

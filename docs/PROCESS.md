@@ -6,7 +6,7 @@
 
 | # | Stage | Dates | Goal | Outcome | Evidence |
 |---|---|---|---|---|---|
-| 1 | Make the numbers checkable | 2026-11-18 | The private original quoted a formula ("0 errors in n samples") without any script | `scripts/sample_bound.py` with tests | `713a106`, `4037e06` |
+| 1 | Make the numbers checkable | 2026-11-18 | The private original quoted a formula ("0 errors in n samples") without any script | `skills/prove-it-review/scripts/sample_bound.py` with tests | `713a106`, `4037e06` |
 | 2 | Generalise the skill and the subagent | 2026-11-18 | Remove personal rules, paths and incident records; write English, host-neutral text | `skills/`, `agents/`, host notes; decisions recorded | `f7831c3`, `f12bf8f`, `a12c257`, [decision 0001](decisions/0001-host-neutral-skill-with-optional-subagent.md), [0002](decisions/0002-excuses-as-reasoning-not-incident-records.md), [0003](decisions/0003-reviewer-model-left-unset.md) |
 | 3 | A worked example that is tested | 2026-11-18 | Show the finding format on a delivery with a known defect, with commands that the tests run | `examples/`, `tests/test_examples.py` | `7456599`, `95358e2`, [devlog](devlog/2026-11-18-padded-finding-in-the-example.md) |
 | 4 | Documents and checks | 2026-11-18 | README, contribution and security policy, CI, decisions, devlog, AI-use, changelog, privacy and standard-file checks | Standard files complete | `921d9b3`, `587f281`, `ca68e34`, `f81a0fd`, `6141d5e`, `ddc6be6`, `6ad60f7` |
@@ -43,8 +43,8 @@ History option: the repository was created fresh for the extraction and its real
 | What was checked | Command | Result | Date |
 |---|---|---|---|
 | Tests | `python -B -m unittest discover -s tests` | See [METRICS.md](METRICS.md): all tests run and pass, none skipped (run on Windows, Python 3.12) | 2026-11-18 |
-| README example in the repository | `python scripts/sample_bound.py 40` | Output identical to the block shown in the README (7.2 % bound, 7.5 % shortcut) | 2026-11-18 |
-| Clean clone | `git clone` of this repository into an empty folder, then `python -B scripts/sample_bound.py 40` and `python -B -m unittest discover -s tests` | README output identical; 21 tests, OK (the count is also in [METRICS.md](METRICS.md)) | 2026-11-18 |
+| README example in the repository | `python skills/prove-it-review/scripts/sample_bound.py 40` | Output identical to the block shown in the README (7.2 % bound, 7.5 % shortcut) | 2026-11-18 |
+| Clean clone | `git clone` of this repository into an empty folder, then `python -B skills/prove-it-review/scripts/sample_bound.py 40` and `python -B -m unittest discover -s tests` | README output identical; 21 tests, OK (the count is also in [METRICS.md](METRICS.md)) | 2026-11-18 |
 | Worked example | `python -B -m unittest -v` in `examples/sample-delivery/` | 1 test, OK; the review's other commands are run by `tests/test_examples.py` | 2026-11-18 |
 | CHANGELOG | `git cliff --tag v0.1.0 --output CHANGELOG.md` (git-cliff 2.14.2) | Output compared with `git log --format=%s`: the three `feat` and the one `fix` commit are listed (without the type prefix); `docs`, `chore`, `ci` and `test` commits are skipped by the `cliff.toml` rules | 2026-11-18 |
 | Secret and privacy scans | see [PRIVACY-CHECK.md](PRIVACY-CHECK.md) | See that file | 2026-11-18 |

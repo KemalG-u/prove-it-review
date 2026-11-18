@@ -108,17 +108,56 @@ class TestShippedFiles(unittest.TestCase):
                 self.assertTrue((SKILL_DIR / target).resolve().exists())
 
     def test_referenced_script_exists(self):
-        self.assertTrue((ROOT / "scripts" / "sample_bound.py").is_file())
+        self.assertTrue((SKILL_DIR / "scripts" / "sample_bound.py").is_file())
         self.assertIn("scripts/sample_bound.py", (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8"))
 
     def test_skill_numbers_match_the_script(self):
-        sys.path.insert(0, str(ROOT / "scripts"))
+        sys.path.insert(0, str(SKILL_DIR / "scripts"))
         import sample_bound
         skill = (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
         self.assertIn("n=40 gives %.1f %%" % (sample_bound.upper_bound(40) * 100), skill)
         self.assertIn("n=10 gives %.1f %%" % (sample_bound.upper_bound(10) * 100), skill)
         # The shortcut quoted for n=10 must be the 3/n value, not the exact bound.
         self.assertIn("(n=10: %.0f %%)" % (sample_bound.rule_of_three(10) * 100), skill)
+
+
+class TestInstalledLayout(unittest.TestCase):
+    """The README tells users to copy only skills/prove-it-review/. Everything the skill points to must still work there."""
+
+    LINK = re.compile(r"\]\(([^)\s]+)\)")
+
+    def test_links_resolve_in_a_copied_skill_folder(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            installed = Path(tmp) / ".claude" / "skills" / "prove-it-review"
+            shutil.copytree(SKILL_DIR, installed, ignore=shutil.ignore_patterns("__pycache__"))
+            documents = sorted(installed.rglob("*.md"))
+            self.assertGreaterEqual(len(documents), 3)
+            checked = 0
+            for document in documents:
+                for target in self.LINK.findall(document.read_text(encoding="utf-8")):
+                    if re.match(r"^[a-z][a-z0-9+.-]*:", target) or target.startswith("#"):
+                        continue  # absolute URL or in-page anchor
+                    with self.subTest(document=document.relative_to(installed).as_posix(), target=target):
+                        resolved = (document.parent / target.split("#")[0]).resolve()
+                        self.assertTrue(resolved.exists(), "dangling link after install")
+                        self.assertTrue(installed.resolve() in resolved.parents or resolved == installed.resolve())
+                        checked += 1
+            self.assertGreaterEqual(checked, 3)
+
+    def test_skill_text_does_not_point_outside_its_folder(self):
+        for document in sorted(SKILL_DIR.rglob("*.md")):
+            with self.subTest(document=document.relative_to(SKILL_DIR).as_posix()):
+                text = document.read_text(encoding="utf-8")
+                self.assertNotIn("](../../", text)  # a link that leaves skills/prove-it-review/
+                self.assertNotIn("](/", text)
+
+    def test_script_runs_from_a_copied_skill_folder(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            installed = Path(tmp) / "prove-it-review"
+            shutil.copytree(SKILL_DIR, installed, ignore=shutil.ignore_patterns("__pycache__"))
+            code, out = run(["-I", str(installed / "scripts" / "sample_bound.py"), "40"], installed)
+        self.assertEqual(code, 0, out)
+        self.assertIn("7.2%", out)
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # Excuses: detail and reasoning
 
-Open this only when the table in `SKILL.md` is not enough. The rows are patterns that make a review look finished without having proven anything. `Interpretation:` they come from the maintainer's experience of reviewing agent output; the individual incidents are not published and cannot be checked from this repository (see [docs/AI-USE.md](../../../docs/AI-USE.md)). Each row is useful on its own reasoning, not on authority.
+Open this only when the table in `SKILL.md` is not enough. The rows are patterns that make a review look finished without having proven anything. `Interpretation:` they come from the maintainer's experience of reviewing agent output; the individual incidents are not published and cannot be checked from this repository (see [docs/AI-USE.md](https://github.com/KemalG-u/prove-it-review/blob/main/docs/AI-USE.md)). Each row is useful on its own reasoning, not on authority.
 
 | Excuse | Response | Reasoning (interpretation) |
 |---|---|---|

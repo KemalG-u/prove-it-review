@@ -15,7 +15,7 @@ overstates the bound for small n, so the exact value is printed next to it.
 Only valid for random, independent samples and for 0 observed failures. A hand-picked hard
 sample does not give a rate. Standard library only.
 
-Usage:
+Usage (from the skill folder skills/prove-it-review/, or give the full path to the script):
     python3 scripts/sample_bound.py 40
     python3 scripts/sample_bound.py 10 --confidence 0.99
 """

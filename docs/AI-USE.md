@@ -30,7 +30,7 @@ The text, code, tests and documents in this repository were written by an AI cod
 
 - Read the private original and listed what was specific to the maintainer's setup: personal quotations and rule names, a file layout, a language, a model pin, references to other private skills and policies, dated incident records.
 - Rewrote the skill in English as host-neutral text and wrote the host notes for Claude Code and Codex from their online documentation (checked on 2026-11-18).
-- Wrote `scripts/sample_bound.py` because the original quoted a formula without any script, and tests for it.
+- Wrote `skills/prove-it-review/scripts/sample_bound.py` because the original quoted a formula without any script, and tests for it.
 - Wrote a synthetic worked example (a retry wrapper with a deliberate defect, a report and a review) and tests that run the commands the review cites.
 - Wrote the README, contributing guide, security policy, decisions, devlog entries, this file and the process overview.
 - Ran the tests, the standard-files checker, the secret scanners and the metrics script.
@@ -43,7 +43,7 @@ The text, code, tests and documents in this repository were written by an AI cod
 | The sample-bound numbers in the skill are right | A test compares the numbers quoted in the skill with the script; the formula values were also computed by hand for n = 10, 20, 40 and 100 | `tests/test_examples.py::TestShippedFiles::test_skill_numbers_match_the_script`, `tests/test_sample_bound.py` |
 | The worked example's review is true | A test runs the cited commands and checks the cited line numbers | `tests/test_examples.py::TestWorkedExample` |
 | No secrets or personal data in the tree and history | Betterleaks, TruffleHog, and a script for local paths and e-mail addresses | [PRIVACY-CHECK.md](PRIVACY-CHECK.md) |
-| README example works | `python3 scripts/sample_bound.py 40` run by the AI tool | [PROCESS.md](PROCESS.md) "Verification" |
+| README example works | `python3 skills/prove-it-review/scripts/sample_bound.py 40` run by the AI tool | [PROCESS.md](PROCESS.md) "Verification" |
 
 ## What was not verified
 

@@ -21,7 +21,7 @@ All tests must pass before you open a pull request. Add or update a test for eve
 ## Design constraints
 
 - The skill text stays host-neutral and free of personal rules, local paths and tool-specific incident records. Host-specific notes go in `skills/prove-it-review/references/hosts.md`.
-- Every number in the skill must be reproducible: put it in a script under `scripts/` with a test, and keep `tests/test_examples.py` green (it compares the skill's numbers with the script).
+- Every number in the skill must be reproducible: put it in a script under `skills/prove-it-review/scripts/` with a test, and keep `tests/test_examples.py` green (it compares the skill's numbers with the script).
 - The worked example under `examples/` must keep telling the truth: if you change `fetcher.py`, update the review and the line numbers it cites.
 - Scripts use the Python standard library only.
 

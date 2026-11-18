@@ -13,7 +13,7 @@ AI coding agents report "done" with confidence, and the report is easy to believ
 
 - The **skill** (`skills/prove-it-review/SKILL.md`) covers three situations: a plan about to be executed (write basis, assumption, refutation and rollback for each step, then attack it), another agent's delivery (split every claim into `VERIFIED`, `FALSE` or `UNVERIFIED`, run the main claim for real, tie acceptance to a version of the output) and your own work (look for how it could be wrong before showing it). Findings use a fixed format: verdict, scope, evidence, severity, skipped checks, suggested fix. A table of "excuses" (for example "the tests pass", "0 errors in the sample") says what to do instead of accepting them.
 - The **reviewer subagent** (`agents/prove-it-reviewer.md`) is a Claude Code subagent definition with read, search and shell tools that preloads the skill, for a review in a clean context.
-- The **calculator** (`scripts/sample_bound.py`) turns "no failures in n random samples" into an upper bound on the failure rate instead of a claim of zero.
+- The **calculator** (`skills/prove-it-review/scripts/sample_bound.py`) turns "no failures in n random samples" into an upper bound on the failure rate instead of a claim of zero.
 
 What it does not do: it does not run by itself, it does not make a reviewer independent of the producer (a clean context on the same model is still the same model), and it is no guarantee that work is correct. It is a checklist with a format, not a verifier.
 
@@ -24,7 +24,7 @@ Requirements: Python 3 (tested on 3.12) for the calculator, the example and the 
 See what "0 failures in 40 samples" allows you to claim:
 
 ```
-python3 scripts/sample_bound.py 40
+python3 skills/prove-it-review/scripts/sample_bound.py 40
 ```
 
 Expected output:
@@ -37,6 +37,8 @@ Valid only if the sample was random and independent; not for hand-picked hard ca
 ```
 
 A worked example is in [`examples/`](examples/): a synthetic report ([`agent-report.md`](examples/sample-delivery/agent-report.md)), the code it describes, and the review the skill produces ([`review-output.md`](examples/review-output.md)). The commands the review cites are run by the tests.
+
+The skill folder `skills/prove-it-review/` is self-contained: it includes the calculator (`scripts/`) and the reference notes, and the links in it that lead elsewhere in this repository are absolute GitHub URLs, so copying only that folder (as below) loses nothing.
 
 ### Claude Code
 
