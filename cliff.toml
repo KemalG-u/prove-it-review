@@ -36,6 +36,11 @@ filter_unconventional = false
 filter_commits = false
 tag_pattern = "v[0-9].*"
 sort_commits = "oldest"
+# The project was first called "adversarial-review"; early commit subjects still use that name.
+# The changelog shows the current name (the git history itself is not rewritten).
+commit_preprocessors = [
+  { pattern = "adversarial-review", replace = "prove-it-review" },
+]
 commit_parsers = [
   { message = "^(chore|ci|build|style|test|docs?)(\\(.*\\))?!?:", skip = true },
   { message = "^chore\\(release\\)", skip = true },
