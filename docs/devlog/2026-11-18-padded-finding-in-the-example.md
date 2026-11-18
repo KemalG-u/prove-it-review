@@ -18,6 +18,10 @@ None recorded.
 
 The padded item was removed and replaced by one sentence saying there are no other findings and nothing was added to pad the list. The line references were corrected, and `tests/test_examples.py::TestWorkedExample::test_review_cites_the_lines_it_names` now fails if the cited lines move.
 
+## Follow-up: "no other findings" was itself unverified
+
+An independent read of the repository later the same day found that the sentence added to replace the padded item, "No other findings", was wrong. `fetch(lambda: 'ok', retries=0)` raises `TypeError: exceptions must derive from BaseException` (`fetcher.py:16`) because the loop body never runs. The author had checked the claims in the report and the main defect, but had not tried the boundary value of the parameter the defect concerns. The review now lists it as finding 3 with the command and its output, and `tests/test_examples.py::TestWorkedExample::test_zero_retries_crashes_as_the_review_says` runs that command. `Interpretation:` "no other findings" needs the same evidence as any other claim: say which edge cases were tried.
+
 ## Evidence
 
 - Commit: `7456599` (the example in its final form), `95358e2` (the test that pins the cited lines)

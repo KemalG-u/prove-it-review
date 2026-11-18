@@ -45,6 +45,13 @@ class TestWorkedExample(unittest.TestCase):
         self.assertEqual(code, 0, out)
         self.assertEqual(out.strip(), "3")  # review-output.md: "attempts: 3", expected 4
 
+    def test_zero_retries_crashes_as_the_review_says(self):
+        code, out = run(["-c", "from fetcher import fetch; fetch(lambda: 'ok', retries=0)"], SAMPLE)
+        self.assertNotEqual(code, 0, out)
+        self.assertIn("TypeError: exceptions must derive from BaseException", out)
+        code, out = run(["-c", "from fetcher import fetch; print(fetch(lambda: 'ok', retries=1))"], SAMPLE)
+        self.assertEqual((code, out.strip()), (0, "ok"), out)
+
     def test_mutant_without_retry_also_passes_the_suite(self):
         with tempfile.TemporaryDirectory() as tmp:
             work = Path(tmp)
@@ -59,6 +66,8 @@ class TestWorkedExample(unittest.TestCase):
         test_lines = (SAMPLE / "test_fetcher.py").read_text(encoding="utf-8").splitlines()
         self.assertIn("range(retries)", fetcher_lines[10])  # fetcher.py:11
         self.assertIn("def test_returns_value_on_first_success", test_lines[8])  # test_fetcher.py:9
+        self.assertIn("raise last_error", fetcher_lines[15])  # fetcher.py:16
+        self.assertIn("`fetcher.py:16`", review)
         self.assertIn("`fetcher.py:11`", review)
         self.assertIn("`test_fetcher.py:9`", review)
 

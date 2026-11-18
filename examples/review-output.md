@@ -1,6 +1,6 @@
 # Review of the synthetic delivery (example output)
 
-This is what a review that follows `skills/prove-it-review/SKILL.md` looks like for [`sample-delivery/`](sample-delivery/). The delivery is synthetic and contains a deliberate defect; the review text was written by hand to show the format. The commands in it are run by `tests/test_examples.py`, so the evidence is checked, but the wording is illustrative.
+This is what a review that follows `skills/prove-it-review/SKILL.md` looks like for [`sample-delivery/`](sample-delivery/). The delivery is synthetic and contains a deliberate defect; the review text was written to show the format; it is not the output of a live reviewer run. The commands in it are run by `tests/test_examples.py`, so the evidence is checked, but the wording is illustrative.
 
 **Verdict: FIX REQUIRED**
 
@@ -18,7 +18,9 @@ This is what a review that follows `skills/prove-it-review/SKILL.md` looks like 
 
 1. **High: the retry count is off by one** (claim 1). Evidence above. Suggested fix: loop `1 + retries` times, and add a test that counts calls for `retries=3` (expected 4) and for `retries=0` (expected 1).
 2. **Medium: the test suite is blind to the feature it was meant to cover** (claim 2). Evidence above (mutant passes). Suggested fix: the test from finding 1 would fail on the mutant; run the mutant again to confirm.
-No other findings. Only `ConnectionError` is retried, which matches the task text ("transient connection errors"); nothing was added to pad the list.
+3. **Medium: `retries=0` makes `fetch` raise `TypeError` even when the call would succeed** (an edge case no claim mentions). Evidence: in `sample-delivery/`, `python -B -c "from fetcher import fetch; fetch(lambda: 'ok', retries=0)"` -> `TypeError: exceptions must derive from BaseException`, raised at `fetcher.py:16` (`raise last_error`) because `range(0)` never runs the loop and `last_error` is still `None`. The same call with `retries=1` returns `ok`. Same root cause as finding 1 (the loop count), different symptom: a crash instead of a wrong count. Suggested fix: the `1 + retries` loop from finding 1 fixes it; add a test for `retries=0` with a function that succeeds (expected: its value) and one that fails (expected: the original `ConnectionError`).
+
+No other findings. Beyond the edge case in finding 3, only `ConnectionError` is retried, which matches the task text ("transient connection errors"); nothing was added to pad the list.
 
 ## Skipped checks
 
@@ -27,4 +29,4 @@ No other findings. Only `ConnectionError` is retried, which matches the task tex
 
 ## Decision for the orchestrator
 
-Revise: the problem is finding 1 and 2; the evidence is the call count; the scope of the fix is `fetcher.py` and `test_fetcher.py`; keep `fetch`'s signature and its re-raise behaviour. This is correction round 1 of at most 2 before the method changes.
+Revise: the problem is findings 1 to 3; the evidence is the call count, the surviving mutant and the `retries=0` crash; the scope of the fix is `fetcher.py` and `test_fetcher.py`; keep `fetch`'s signature and its re-raise behaviour. This is correction round 1 of at most 2 before the method changes.
