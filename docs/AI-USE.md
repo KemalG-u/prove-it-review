@@ -2,7 +2,7 @@
 
 This is the maintainer's own statement of how AI tools were used to build this project, what the human did, and what was verified. Raw agent transcripts (`*.jsonl`) are **not** published: they can contain private paths, personal data and secrets. This record is a curated summary; its claims point to commits, tests and files you can inspect.
 
-Maintainer: Kemal (KarıncaAI) · Record: reconstructed on 2026-11-18 (drafted by the AI tool that did the extraction). The maintainer's answers given in conversation on 2026-11-18 are recorded below where marked; confirmed by the maintainer on 2026-11-18 (approval of release and decisions) · Last reviewed at commit: Not recorded
+Maintainer: Kemal (KarıncaAI) · Record: reconstructed on 2026-11-18 (drafted by the AI tool that did the extraction). The maintainer's answers given in conversation on 2026-11-18 are recorded below where marked. The maintainer approved the release and the three design decisions on 2026-11-18; he has not stated that he read and confirmed this record as a whole. · Last reviewed at commit: Not recorded
 
 ## Summary
 
