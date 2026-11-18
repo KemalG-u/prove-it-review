@@ -1,5 +1,5 @@
 ---
-name: adversarial-review
+name: prove-it-review
 description: "Adversarial review before a plan is executed, before another agent's report is accepted, and for challenging your own work. Use when asked to review critically, verify a claim, or prove that something works, and whenever a sub-agent, another model or a teammate hands back a report saying the work is done. Do not use for closing out or delivering your own finished work, for research, or for choosing which agent to use."
 ---
 

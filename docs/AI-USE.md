@@ -1,4 +1,4 @@
-# AI use in adversarial-review
+# AI use in prove-it-review
 
 This is the maintainer's own statement of how AI tools were used to build this project, what the human did, and what was verified. Raw agent transcripts (`*.jsonl`) are **not** published: they can contain private paths, personal data and secrets. This record is a curated summary; its claims point to commits, tests and files you can inspect.
 
@@ -14,7 +14,7 @@ The text, code, tests and documents in this repository were written by an AI cod
 |---|---|---|
 | Claude Code, delegated sub-agent on Claude Sonnet 5.5 (the model name comes from the session's own system information) | Did the extraction: generalised the skill and the subagent definition, wrote the script, tests, example, README and all documents; ran tests, scanners and checks | Everything in this repository |
 | Claude Code, main session that delegated the task | Gave the sub-agent its task, constraints and acceptance criteria on behalf of the maintainer. Its model is not recorded in this repository | Task definition only; it did not write files here |
-| The private original (file times: skill 2026-11-11, subagent definition 2026-10-17) | The source that was generalised. Not published. Which tool or person wrote it: KEMAL-VERIFY (see Summary) | Origin of `skills/adversarial-review/SKILL.md` and `agents/adversarial-reviewer.md` |
+| The private original (file times: skill 2026-11-11, subagent definition 2026-10-17) | The source that was generalised. Not published. Which tool or person wrote it: KEMAL-VERIFY (see Summary) | Origin of `skills/prove-it-review/SKILL.md` and `agents/prove-it-reviewer.md` |
 | git-cliff, Betterleaks, TruffleHog (versions in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) and [PROCESS.md](PROCESS.md)) | Changelog generation and secret scanning (tools, not AI) | `CHANGELOG.md`, [PRIVACY-CHECK.md](PRIVACY-CHECK.md) |
 
 ## What the human did

@@ -1,4 +1,4 @@
-# git-cliff configuration for adversarial-review - Keep a Changelog 1.1 layout.
+# git-cliff configuration for prove-it-review - Keep a Changelog 1.1 layout.
 # Based on the keepachangelog example shipped with git-cliff (examples/keepachangelog.toml).
 # Generate:  git cliff --output CHANGELOG.md          (all history)
 #            git cliff --unreleased                   (preview only)

@@ -1,8 +1,8 @@
-# adversarial-review
+# prove-it-review
 
 An agent skill and a reviewer subagent definition for checking plans, other agents' reports and your own work by trying to break them, with a small calculator for what "0 errors in n samples" really tells you.
 
-[![CI](https://github.com/KemalG-u/adversarial-review/actions/workflows/ci.yml/badge.svg)](https://github.com/KemalG-u/adversarial-review/actions/workflows/ci.yml)
+[![CI](https://github.com/KemalG-u/prove-it-review/actions/workflows/ci.yml/badge.svg)](https://github.com/KemalG-u/prove-it-review/actions/workflows/ci.yml)
 **Status:** alpha · **License:** Apache-2.0
 
 <!-- Test and coverage badges come from CI only. Never type a test count by hand. -->
@@ -11,8 +11,8 @@ An agent skill and a reviewer subagent definition for checking plans, other agen
 
 AI coding agents report "done" with confidence, and the report is easy to believe. This project gives an agent (or a person directing agents) a short, strict procedure for not believing it without evidence:
 
-- The **skill** (`skills/adversarial-review/SKILL.md`) covers three situations: a plan about to be executed (write basis, assumption, refutation and rollback for each step, then attack it), another agent's delivery (split every claim into `VERIFIED`, `FALSE` or `UNVERIFIED`, run the main claim for real, tie acceptance to a version of the output) and your own work (look for how it could be wrong before showing it). Findings use a fixed format: verdict, scope, evidence, severity, skipped checks, suggested fix. A table of "excuses" (for example "the tests pass", "0 errors in the sample") says what to do instead of accepting them.
-- The **reviewer subagent** (`agents/adversarial-reviewer.md`) is a Claude Code subagent definition with read, search and shell tools that preloads the skill, for a review in a clean context.
+- The **skill** (`skills/prove-it-review/SKILL.md`) covers three situations: a plan about to be executed (write basis, assumption, refutation and rollback for each step, then attack it), another agent's delivery (split every claim into `VERIFIED`, `FALSE` or `UNVERIFIED`, run the main claim for real, tie acceptance to a version of the output) and your own work (look for how it could be wrong before showing it). Findings use a fixed format: verdict, scope, evidence, severity, skipped checks, suggested fix. A table of "excuses" (for example "the tests pass", "0 errors in the sample") says what to do instead of accepting them.
+- The **reviewer subagent** (`agents/prove-it-reviewer.md`) is a Claude Code subagent definition with read, search and shell tools that preloads the skill, for a review in a clean context.
 - The **calculator** (`scripts/sample_bound.py`) turns "no failures in n random samples" into an upper bound on the failure rate instead of a claim of zero.
 
 What it does not do: it does not run by itself, it does not make a reviewer independent of the producer (a clean context on the same model is still the same model), and it is no guarantee that work is correct. It is a checklist with a format, not a verifier.
@@ -40,12 +40,12 @@ A worked example is in [`examples/`](examples/): a synthetic report ([`agent-rep
 
 ### Claude Code
 
-1. Copy `skills/adversarial-review/` to `.claude/skills/` (this project) or `~/.claude/skills/` (all projects).
-2. Optional, for a review in a separate context: copy `agents/adversarial-reviewer.md` to `.claude/agents/` or `~/.claude/agents/`. The definition does not set a model; set `model:` yourself so the reviewer is at the producer's level or higher (see [`references/hosts.md`](skills/adversarial-review/references/hosts.md)).
+1. Copy `skills/prove-it-review/` to `.claude/skills/` (this project) or `~/.claude/skills/` (all projects).
+2. Optional, for a review in a separate context: copy `agents/prove-it-reviewer.md` to `.claude/agents/` or `~/.claude/agents/`. The definition does not set a model; set `model:` yourself so the reviewer is at the producer's level or higher (see [`references/hosts.md`](skills/prove-it-review/references/hosts.md)).
 
 ### Codex
 
-Copy `skills/adversarial-review/` to `.agents/skills/` in your repository or `~/.agents/skills/` for all projects, and call it by name (`$adversarial-review`) or let the description match. The subagent file is Claude Code only. The skill has not been loaded in a live Codex session by the author.
+Copy `skills/prove-it-review/` to `.agents/skills/` in your repository or `~/.agents/skills/` for all projects, and call it by name (`$prove-it-review`) or let the description match. The subagent file is Claude Code only. The skill has not been loaded in a live Codex session by the author.
 
 ## Limits
 

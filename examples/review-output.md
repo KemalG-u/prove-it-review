@@ -1,6 +1,6 @@
 # Review of the synthetic delivery (example output)
 
-This is what a review that follows `skills/adversarial-review/SKILL.md` looks like for [`sample-delivery/`](sample-delivery/). The delivery is synthetic and contains a deliberate defect; the review text was written by hand to show the format. The commands in it are run by `tests/test_examples.py`, so the evidence is checked, but the wording is illustrative.
+This is what a review that follows `skills/prove-it-review/SKILL.md` looks like for [`sample-delivery/`](sample-delivery/). The delivery is synthetic and contains a deliberate defect; the review text was written by hand to show the format. The commands in it are run by `tests/test_examples.py`, so the evidence is checked, but the wording is illustrative.
 
 **Verdict: FIX REQUIRED**
 

@@ -22,4 +22,4 @@ The padded item was removed and replaced by one sentence saying there are no oth
 
 - Commit: `7456599` (the example in its final form), `95358e2` (the test that pins the cited lines)
 - Test: `tests/test_examples.py::TestWorkedExample::test_review_cites_the_lines_it_names`
-- Rule: the last row of the excuses table in `skills/adversarial-review/SKILL.md`
+- Rule: the last row of the excuses table in `skills/prove-it-review/SKILL.md`

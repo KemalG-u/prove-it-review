@@ -1,4 +1,4 @@
-# How adversarial-review was developed
+# How prove-it-review was developed
 
 > Short overview only. Facts (dates, counts) come from git history and scripts and name their source. Opinions are labelled `Interpretation:`. Details of individual problems live in [devlog/](devlog/). This record was RECONSTRUCTED on 2026-11-18 from the git history and the working session of the extraction.
 

@@ -11,7 +11,7 @@
 
 Please do **not** open a public issue for a security problem.
 
-Report it privately with GitHub's private vulnerability reporting: open the repository's **Security** tab and choose **Report a vulnerability** (https://github.com/KemalG-u/adversarial-review/security/advisories/new).
+Report it privately with GitHub's private vulnerability reporting: open the repository's **Security** tab and choose **Report a vulnerability** (https://github.com/KemalG-u/prove-it-review/security/advisories/new).
 
 Include: affected version, a description, steps to reproduce, and the impact you see. Never include real secrets or personal data in a report; describe where they appear instead.
 

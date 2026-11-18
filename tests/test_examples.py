@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SAMPLE = ROOT / "examples" / "sample-delivery"
-SKILL_DIR = ROOT / "skills" / "adversarial-review"
+SKILL_DIR = ROOT / "skills" / "prove-it-review"
 
 COUNT_SNIPPET = """
 from fetcher import fetch
@@ -83,20 +83,20 @@ class TestShippedFiles(unittest.TestCase):
 
     def test_skill_frontmatter(self):
         front = self.frontmatter(SKILL_DIR / "SKILL.md")
-        self.assertRegex(front, r"(?m)^name: adversarial-review$")
+        self.assertRegex(front, r"(?m)^name: prove-it-review$")
         description = re.search(r'(?m)^description: "(.*)"$', front)
         self.assertIsNotNone(description)
         self.assertTrue(0 < len(description.group(1)) <= 1024)
 
     def test_skill_directory_name_matches_skill_name(self):
-        self.assertEqual(SKILL_DIR.name, "adversarial-review")
+        self.assertEqual(SKILL_DIR.name, "prove-it-review")
 
     def test_agent_definition(self):
-        front = self.frontmatter(ROOT / "agents" / "adversarial-reviewer.md")
-        self.assertRegex(front, r"(?m)^name: adversarial-reviewer$")
+        front = self.frontmatter(ROOT / "agents" / "prove-it-reviewer.md")
+        self.assertRegex(front, r"(?m)^name: prove-it-reviewer$")
         self.assertRegex(front, r"(?m)^description: .+")
         self.assertRegex(front, r"(?m)^tools: Read, Grep, Glob, Bash$")
-        self.assertIn("- adversarial-review", front)
+        self.assertIn("- prove-it-review", front)
         self.assertNotRegex(front, r"(?m)^model:")  # model is left to the user; see references/hosts.md
 
     def test_relative_links_in_skill_resolve(self):
