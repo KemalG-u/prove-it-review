@@ -53,7 +53,7 @@ For reviewing documents and code against what was asked, see "Intended versus im
 | Excuse | Response |
 |---|---|
 | "0 errors / tests pass" | Test the measurement: does it catch a known-bad example, and how many records did it skip? Put the skipped count in the report |
-| "0 errors in the sample, so no errors" | Do not give a rate; give an upper bound. After 0 failures in n random, independent samples the one-sided 95 % bound is `1 - 0.05^(1/n)`, about 3/n: n=40 gives 7.2 %, n=10 gives 25.9 % (compute with `scripts/sample_bound.py`). Never derive a rate from deliberately hard cases; report random and risky samples separately |
+| "0 errors in the sample, so no errors" | Do not give a rate; give an upper bound. After 0 failures in n random, independent samples the one-sided 95 % bound is `1 - 0.05^(1/n)`: n=40 gives 7.2 %, n=10 gives 25.9 % (compute with `scripts/sample_bound.py`). The quick shortcut 3/n is close for large n but overstates small samples (n=10: 30 %). Never derive a rate from deliberately hard cases; report random and risky samples separately |
 | "A separate context with the same model reviewed it" | Not independent. "No new angle" is a valid result; name the level honestly ("same model, clean context") |
 | "The fixture / smoke test passed" | Not an end-to-end acceptance; report the two separately |
 | "The report is consistent and detailed" | Consistency is not correctness; look at the source |

@@ -117,6 +117,8 @@ class TestShippedFiles(unittest.TestCase):
         skill = (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
         self.assertIn("n=40 gives %.1f %%" % (sample_bound.upper_bound(40) * 100), skill)
         self.assertIn("n=10 gives %.1f %%" % (sample_bound.upper_bound(10) * 100), skill)
+        # The shortcut quoted for n=10 must be the 3/n value, not the exact bound.
+        self.assertIn("(n=10: %.0f %%)" % (sample_bound.rule_of_three(10) * 100), skill)
 
 
 if __name__ == "__main__":
