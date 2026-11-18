@@ -74,5 +74,22 @@ Read from GitHub and from the scanners on 2026-11-18, after the repository was p
 | GitHub secret scanning, push protection, private vulnerability reporting, Dependabot alerts | enabled (read back from the GitHub API on 2026-11-18; Dependabot alerts: API status 204). Dependabot security updates: disabled. Dependabot version updates for the actions are configured in `.github/dependabot.yml` |
 | GitHub dependency graph SBOM export | export available; the dependency graph lists 3 packages. This row records only that the export is available and its package count |
 | Secret scans re-run on the published history | at `7eebfba`: Betterleaks 1.10.1 git mode, no leaks found; TruffleHog 3.99.9 git mode, 0 findings |
-| `CHANGELOG.md` | generated for the tag `v0.1.0` with git-cliff 2.14.2 (`git cliff --tag v0.1.0 --output CHANGELOG.md`) and regenerated after publication; two runs gave identical files |
+| `CHANGELOG.md` | generated for the tag `v0.1.0` with git-cliff 2.14.2 (`git cliff --tag v0.1.0 --output CHANGELOG.md`) and regenerated after publication; two runs gave identical files. `v0.1.0` is now an actual tag (see the hosted state below); this update did not change `CHANGELOG.md`. |
 | Scans after this file and the regenerated METRICS.md were added | done at `825b552` (19 commits): Betterleaks git and dir mode 0 findings; TruffleHog git mode 0 (62 chunks, 105,219 bytes) and filesystem mode 0 (167 chunks, 272,370 bytes), 0 verified, 0 unverified; the private checker in its strict mode exit code 0 with 0 missing standard files; with the 7 terms, 25 term hits of the same kinds as in section 3 (name and brand, GitHub user name, and the placeholder marker, resolved before release). The text of this row was added after these scans |
+
+### Hosted state after the `v0.1.0` tag
+
+The tag `v0.1.0` and the GitHub release were created on 2026-11-18 at `9cc56b838b9436aaa6647a9c4ae05ad8f76eb8f7`, the tip of `main` at that time. `CHANGELOG.md` already had a 0.1.0 section; `v0.1.0` is now a real tag, and this update did not change `CHANGELOG.md`. The table below was generated from a saved read-only GitHub API response of 2026-11-19, taken while `main` was still at that commit. This documentation update and the metrics commit that follows it came after the tag: `main` is ahead of `v0.1.0` by those commits. The tag was not moved and no new tag was created.
+
+| Item | State |
+|---|---|
+| Read | GitHub API read on 2026-11-19 (mode: read-only) for KemalG-u/prove-it-review |
+| Publication | https://github.com/KemalG-u/prove-it-review (visibility=public private=False; fork=False) |
+| Branch tip | `main` was at `9cc56b838b9436aaa6647a9c4ae05ad8f76eb8f7` when read |
+| CI on the branch tip | workflow "CI" (`.github/workflows/ci.yml`), run 44357627692, event push, conclusion success, commit `9cc56b838b9436aaa6647a9c4ae05ad8f76eb8f7`: https://github.com/KemalG-u/prove-it-review/actions/runs/44357627692 |
+| Security settings | secret scanning: enabled; push protection: enabled; private vulnerability reporting: enabled; Dependabot alerts: enabled; Dependabot security updates: disabled |
+| Topics | 6: agent-skills, ai-agents, claude-code, code-review, subagents, verification |
+| Community health | health percentage 100; readme, license, contributing, code_of_conduct present |
+| Release and tag | tag `v0.1.0` points to `9cc56b838b9436aaa6647a9c4ae05ad8f76eb8f7` (lightweight); GitHub release published: https://github.com/KemalG-u/prove-it-review/releases/tag/v0.1.0; tag equals the `main` tip read |
+| Profile pin | 3 pinned items; this repository is among them |
+| Profile README | profile README mentions the repository |
