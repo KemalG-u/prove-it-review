@@ -1,0 +1,29 @@
+# CI: run the tests on every push and pull request.
+# Trust signals this file provides (OpenSSF Scorecard checks Token-Permissions and Pinned-Dependencies):
+#   - top-level `permissions: contents: read` (least privilege; add more only per job, with a reason)
+#   - every third-party action pinned to a FULL-LENGTH COMMIT SHA, with the version in a comment
+# SHAs below were resolved on 2026-11-18 from the upstream tags (actions/checkout v7.0.1, actions/setup-python v7.1.0).
+# Dependabot (.github/dependabot.yml) proposes updates to the pins. Re-resolve before use:
+#   git ls-remote --tags https://github.com/actions/checkout 'refs/tags/v*'
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Test
+        run: python -B -m unittest discover -s tests -v
