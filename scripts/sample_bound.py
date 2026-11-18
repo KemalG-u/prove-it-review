@@ -20,6 +20,7 @@ Usage:
     python3 scripts/sample_bound.py 10 --confidence 0.99
 """
 import argparse
+import math
 import sys
 
 
@@ -29,7 +30,8 @@ def upper_bound(n, confidence=0.95):
         raise ValueError("n must be an integer >= 1")
     if not 0 < confidence < 1:
         raise ValueError("confidence must be strictly between 0 and 1")
-    return 1.0 - (1.0 - confidence) ** (1.0 / n)
+    # Same value as 1 - (1 - confidence) ** (1 / n), but stays accurate for very large n.
+    return -math.expm1(math.log1p(-confidence) / n)
 
 
 def rule_of_three(n):
@@ -37,6 +39,24 @@ def rule_of_three(n):
     if isinstance(n, bool) or not isinstance(n, int) or n < 1:
         raise ValueError("n must be an integer >= 1")
     return min(1.0, 3.0 / n)
+
+
+def format_percent(fraction):
+    """Format a fraction as a percentage with at least two significant digits.
+
+    A fixed "%.1f" would print "0.0%" for large n; here the number of decimals grows as
+    the value shrinks (7.2%, 0.030%).
+    """
+    percent = fraction * 100
+    if percent <= 0:
+        return "0%"
+    decimals = max(1, 1 - int(math.floor(math.log10(percent))))
+    return "%.*f%%" % (decimals, percent)
+
+
+def format_confidence(confidence):
+    """Confidence level as a percentage label without rounding it (0.995 -> '99.5%', 0.95 -> '95%')."""
+    return "%.10g%%" % (confidence * 100)
 
 
 def main(argv=None):
@@ -51,9 +71,9 @@ def main(argv=None):
         print("error: %s" % err, file=sys.stderr)
         return 2
     print("n = %d, 0 failures observed" % args.n)
-    print("%.0f%% upper bound on the failure rate: %.1f%%" % (args.confidence * 100, exact * 100))
+    print("%s upper bound on the failure rate: %s" % (format_confidence(args.confidence), format_percent(exact)))
     if abs(args.confidence - 0.95) < 1e-12:
-        print("3/n approximation: %.1f%%" % (approx * 100))
+        print("3/n approximation: %s" % format_percent(approx))
     print("Valid only if the sample was random and independent; not for hand-picked hard cases.")
     return 0
 

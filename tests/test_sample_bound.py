@@ -43,6 +43,28 @@ class TestUpperBound(unittest.TestCase):
                 sample_bound.upper_bound(10, bad)
 
 
+class TestFormatting(unittest.TestCase):
+    def test_percent_keeps_two_significant_digits(self):
+        for fraction, expected in [(0.0722, "7.2%"), (0.2589, "25.9%"), (0.95, "95.0%"), (1.0, "100.0%"),
+                                   (0.00030, "0.030%"), (0.00003, "0.0030%"), (3e-9, "0.00000030%")]:
+            with self.subTest(fraction=fraction):
+                self.assertEqual(sample_bound.format_percent(fraction), expected)
+
+    def test_percent_is_never_a_rounded_zero(self):
+        for n in (6000, 10000, 10 ** 6, 10 ** 12):
+            with self.subTest(n=n):
+                text = sample_bound.format_percent(sample_bound.upper_bound(n))
+                self.assertNotEqual(float(text.rstrip("%")), 0.0)
+
+    def test_confidence_label(self):
+        for confidence, expected in [(0.95, "95%"), (0.99, "99%"), (0.995, "99.5%"), (0.999, "99.9%"), (0.9, "90%")]:
+            with self.subTest(confidence=confidence):
+                self.assertEqual(sample_bound.format_confidence(confidence), expected)
+
+    def test_huge_n_stays_positive(self):
+        self.assertGreater(sample_bound.upper_bound(10 ** 18), 0.0)
+
+
 class TestCommandLine(unittest.TestCase):
     def run_cli(self, *args):
         proc = subprocess.run([sys.executable, "-I", str(SCRIPT), *args], capture_output=True)
@@ -59,6 +81,22 @@ class TestCommandLine(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertIn("99% upper bound", out)
         self.assertNotIn("3/n", out)
+
+    def test_large_n_does_not_print_a_rounded_zero(self):
+        for n in ("6000", "10000", "100000"):
+            with self.subTest(n=n):
+                code, out, _ = self.run_cli(n)
+                self.assertEqual(code, 0)
+                self.assertNotRegex(out, r"(?<![\d.])0\.0%")
+        _, out, _ = self.run_cli("10000")
+        self.assertIn("95% upper bound on the failure rate: 0.030%", out)
+        self.assertIn("3/n approximation: 0.030%", out)
+
+    def test_confidence_label_is_not_rounded(self):
+        code, out, _ = self.run_cli("40", "--confidence", "0.995")
+        self.assertEqual(code, 0)
+        self.assertIn("99.5% upper bound", out)
+        self.assertNotIn("100%", out)
 
     def test_zero_is_a_usage_error(self):
         code, _, err = self.run_cli("0")
