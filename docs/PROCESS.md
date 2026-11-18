@@ -12,7 +12,7 @@
 | 4 | Documents and checks | 2026-11-18 | README, contribution and security policy, CI, decisions, devlog, AI-use, changelog, process overview, metrics | Standard files complete | `921d9b3`, `587f281`, `ca68e34`, `f81a0fd`, `6141d5e`, `ddc6be6`, `6ad60f7`, `b7a0c3b`, `37ebc1b` |
 | 5 | Privacy and secret check | 2026-11-18 | Scan history and tree with two secret scanners, check paths and personal terms, record the result | [PRIVACY-CHECK.md](PRIVACY-CHECK.md) with tool versions and counts; metrics regenerated | `56007ef`, `825b552`, `2b90111`, `8ee0c14` |
 | 6 | Rename after the name search | 2026-11-18 | The first name `adversarial-review` was crowded on GitHub, npm and PyPI; the maintainer chose `prove-it-review` | Tree renamed; maintainer's answers recorded in AI-USE; metrics regenerated | `cc3753b`, `c4c1957`, `860f7b9` |
-| 7 | Fixes after an independent read | 2026-11-18 | A reader with a clean context checked the repository against its own claims and reported findings | Large-n output of the calculator, skill folder made self-contained, changelog regenerated, AI-use wording, a missed edge case in the example, generic tool names | `fa6cb02`, `f1a2011`, `db5585f`, `2f73d36`, `7d099be`, `d7a4b47` and the commits after them in `git log` |
+| 7 | Fixes after an independent AI read | 2026-11-18 | An AI reader (fresh-context Claude Opus 5.5 agent; see [AI-USE.md](AI-USE.md)) checked the repository against its own claims and reported findings | Large-n output of the calculator, skill folder made self-contained, changelog regenerated, AI-use wording, a missed edge case in the example, generic tool names | `fa6cb02`, `f1a2011`, `db5585f`, `2f73d36`, `7d099be`, `d7a4b47` and the commits after them in `git log` |
 
 Stage boundaries are a judgement, not derived from gaps in activity: the whole extraction happened in one working session on a single day. `Interpretation:` The stages follow the order in which the artefacts were produced.
 
@@ -32,7 +32,7 @@ Dates are author dates from the git history of this repository. Commits were cre
 | 2026-11-18 | Process overview and first generated metrics | commits `b7a0c3b`, `37ebc1b` |
 | 2026-11-18 | Privacy and secret check, metrics regenerated, scans recorded, positive-control note corrected | commits `56007ef`, `825b552`, `2b90111`, `8ee0c14` |
 | 2026-11-18 | Renamed from `adversarial-review` to `prove-it-review` after the name search; maintainer's answers recorded; metrics regenerated | commits `cc3753b`, `c4c1957`, `860f7b9` |
-| 2026-11-18 | Fixes after the independent read: calculator output for large n, self-contained skill folder, changelog regenerated, AI-use wording, example review, generic tool names | commits `fa6cb02`, `f1a2011`, `db5585f`, `2f73d36`, `7d099be`, `d7a4b47`; the rest of the round is in `git log` |
+| 2026-11-18 | Fixes after the independent AI read (fresh-context Claude Opus 5.5 reader): calculator output for large n, self-contained skill folder, changelog regenerated, AI-use wording, example review, generic tool names | commits `fa6cb02`, `f1a2011`, `db5585f`, `2f73d36`, `7d099be`, `d7a4b47`; the rest of the round is in `git log` |
 
 ## Where to read more
 

@@ -20,7 +20,7 @@ The padded item was removed and replaced by one sentence saying there are no oth
 
 ## Follow-up: "no other findings" was itself unverified
 
-An independent read of the repository later the same day found that the sentence added to replace the padded item, "No other findings", was wrong. `fetch(lambda: 'ok', retries=0)` raises `TypeError: exceptions must derive from BaseException` (`fetcher.py:16`) because the loop body never runs. The author had checked the claims in the report and the main defect, but had not tried the boundary value of the parameter the defect concerns. The review now lists it as finding 3 with the command and its output, and `tests/test_examples.py::TestWorkedExample::test_zero_retries_crashes_as_the_review_says` runs that command. `Interpretation:` "no other findings" needs the same evidence as any other claim: say which edge cases were tried.
+An independent AI read (a fresh-context Claude Opus 5.5 reader) of the repository later the same day found that the sentence added to replace the padded item, "No other findings", was wrong. `fetch(lambda: 'ok', retries=0)` raises `TypeError: exceptions must derive from BaseException` (`fetcher.py:16`) because the loop body never runs. The author had checked the claims in the report and the main defect, but had not tried the boundary value of the parameter the defect concerns. The review now lists it as finding 3 with the command and its output, and `tests/test_examples.py::TestWorkedExample::test_zero_retries_crashes_as_the_review_says` runs that command. `Interpretation:` "no other findings" needs the same evidence as any other claim: say which edge cases were tried.
 
 ## Evidence
 

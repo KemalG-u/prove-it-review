@@ -30,7 +30,7 @@ Chosen option: "host-neutral skill, host notes in `references/hosts.md`, optiona
 ### Consequences
 
 * Good, because the procedure is maintained once.
-* Bad, because Codex users get no ready reviewer definition; the README tells them to start a clean session instead.
+* Bad, because Codex users get no ready reviewer definition; `skills/prove-it-review/references/hosts.md` tells them to start a clean session instead.
 * Bad, because the Codex path was only checked against its documentation, not in a live session (see [AI-USE.md](../AI-USE.md)).
 
 ### Confirmation
