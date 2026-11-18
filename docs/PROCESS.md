@@ -61,4 +61,4 @@ History option: the repository was created fresh for the extraction and its real
 - The skill and the subagent definition were not exercised in live Codex and Claude Code sessions by the extraction (see [AI-USE.md](AI-USE.md)).
 - Nothing measures whether using the skill improves reviews.
 - CI and the state of the GitHub security settings are recorded in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 7, the one place for statements about the hosted repository.
-- Pending release-day items (CHANGELOG regeneration, CI run, GitHub settings, scans of the published history) are listed once, in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 7.
+- The publication-day items (CHANGELOG regeneration, CI run, GitHub settings, scans of the published history) are recorded once, in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 7.

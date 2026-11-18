@@ -40,7 +40,7 @@ The text, code, tests and documents in this repository were written by an AI cod
 
 | Claim | Verification | Evidence |
 |---|---|---|
-| The unit tests pass | Run by the AI tool with `python -B -m unittest discover -s tests` on Windows, Python 3.12. CI (Linux, Python 3.12) is configured but its first run is recorded only after publication | [METRICS.md](METRICS.md); state of CI in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 7 |
+| The unit tests pass | Run by the AI tool with `python -B -m unittest discover -s tests` on Windows, Python 3.12. CI (Linux, Python 3.12) runs the same command on GitHub | [METRICS.md](METRICS.md); state of CI in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 7 |
 | The sample-bound numbers in the skill are right | A test compares the numbers quoted in the skill with the script; the formula values for n = 10, 20, 40 and 100 were also computed independently by the AI tool | `tests/test_examples.py::TestShippedFiles::test_skill_numbers_match_the_script`, `tests/test_sample_bound.py` |
 | The worked example's review is true | A test runs the cited commands and checks the cited line numbers | `tests/test_examples.py::TestWorkedExample` |
 | No secrets or personal data in the tree and history | Betterleaks, TruffleHog, and a script for local paths and e-mail addresses | [PRIVACY-CHECK.md](PRIVACY-CHECK.md) |
