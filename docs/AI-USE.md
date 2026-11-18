@@ -2,11 +2,11 @@
 
 This is the maintainer's own statement of how AI tools were used to build this project, what the human did, and what was verified. Raw agent transcripts (`*.jsonl`) are **not** published: they can contain private paths, personal data and secrets. This record is a curated summary; its claims point to commits, tests and files you can inspect.
 
-Maintainer: Kemal (KarıncaAI) · Record: reconstructed on 2026-11-18 (drafted by the AI tool that did the extraction; KEMAL-VERIFY: maintainer confirmation and date pending) · Last reviewed at commit: KEMAL-VERIFY (set when the maintainer has read this file)
+Maintainer: Kemal (KarıncaAI) · Record: reconstructed on 2026-11-18 (drafted by the AI tool that did the extraction). The maintainer's answers given in conversation on 2026-11-18 are recorded below where marked; he has not yet read and confirmed the whole record (KEMAL-VERIFY: confirmation of the whole record and its date pending) · Last reviewed at commit: KEMAL-VERIFY (set when the maintainer has read this file)
 
 ## Summary
 
-The text, code, tests and documents in this repository were written by an AI coding agent (Claude Code) working from instructions of the maintainer. The project is a generalised extraction of a skill and a subagent definition that began in the maintainer's own private agent setup. Whether the private original was written by hand or by an AI tool is stated below only as far as the maintainer has confirmed it. KEMAL-VERIFY: who wrote the original skill and subagent definition (by hand, or an AI tool under your direction) and who set the rule behind them.
+The text, code, tests and documents in this repository were written by an AI coding agent (Claude Code) working from instructions of the maintainer. The project is a generalised extraction of a skill and a subagent definition that began in the maintainer's own private agent setup. The maintainer's statement of 2026-11-18, in his own summary: "I directed, the AI wrote." He set the rule and the idea behind the skill (look at the work adversarially and demand proof); the text of the original skill and subagent definition was written by Claude Code or Codex under his direction. Which of the two tools wrote which file, and with which model, is not recorded.
 
 ## Tools and models
 
@@ -14,15 +14,17 @@ The text, code, tests and documents in this repository were written by an AI cod
 |---|---|---|
 | Claude Code, delegated sub-agent on Claude Sonnet 5.5 (the model name comes from the session's own system information) | Did the extraction: generalised the skill and the subagent definition, wrote the script, tests, example, README and all documents; ran tests, scanners and checks | Everything in this repository |
 | Claude Code, main session that delegated the task | Gave the sub-agent its task, constraints and acceptance criteria on behalf of the maintainer. Its model is not recorded in this repository | Task definition only; it did not write files here |
-| The private original (file times: skill 2026-11-11, subagent definition 2026-10-17) | The source that was generalised. Not published. Which tool or person wrote it: KEMAL-VERIFY (see Summary) | Origin of `skills/prove-it-review/SKILL.md` and `agents/prove-it-reviewer.md` |
+| The private original (file times: skill 2026-11-11, subagent definition 2026-10-17) | The source that was generalised. Not published. Written by Claude Code or Codex under the maintainer's direction (his statement of 2026-11-18); which tool and model wrote which file is not recorded | Origin of `skills/prove-it-review/SKILL.md` and `agents/prove-it-reviewer.md` |
 | git-cliff, Betterleaks, TruffleHog (versions in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) and [PROCESS.md](PROCESS.md)) | Changelog generation and secret scanning (tools, not AI) | `CHANGELOG.md`, [PRIVACY-CHECK.md](PRIVACY-CHECK.md) |
 
 ## What the human did
 
-- Decided: that this skill is published, under Apache-2.0 with the copyright line in `NOTICE` (a standing publication decision of 2026-11-18). The three design decisions in [decisions/](decisions/) were drafted by the AI tool and are marked `proposed` until the maintainer confirms them. KEMAL-VERIFY: which other decisions were yours.
-- Reviewed: KEMAL-VERIFY: what you read (for example "read the README and the skill text, not the scripts").
-- Ran and checked: KEMAL-VERIFY: whether you ran the tests yourself. The tests, the scans and the example were run by the AI tool (see below).
-- Accepted or rejected: KEMAL-VERIFY: any AI output you rejected or changed. One correction made inside the extraction, by the AI tool on re-reading its own draft, is in the [devlog](devlog/2026-11-18-three-over-n-is-not-the-bound.md).
+- Decided: that this skill is published, under Apache-2.0 with the copyright line in `NOTICE` (a standing publication decision of 2026-11-18). The three design decisions in [decisions/](decisions/) were drafted by the AI tool and are marked `proposed` until the maintainer confirms them. KEMAL-VERIFY: which of them you confirm, and which other decisions were yours.
+- Decided, by his own statement of 2026-11-18: the rule and the idea behind the skill ("look at it adversarially, prove it"), and the name `prove-it-review`, chosen after the name search showed the first candidate name to be crowded ([PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 4).
+- Stated, 2026-11-18: this is a personal project; no employer or client code, data or work time was used (his answer "yes"; recorded in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 4).
+- Reviewed: the maintainer reviewed and checked all changes; he wrote no code, and all code and documents were written by AI tools (maintainer's statement, 2026-11-18). KEMAL-VERIFY: which files he read and how closely.
+- Ran and checked: the maintainer works by checking the changes (statement above). Whether he ran the tests himself is not stated: KEMAL-VERIFY. The tests, the scans and the example were run by the AI tool (see below).
+- Accepted or rejected: not yet confirmed by the maintainer, apart from the rename above. KEMAL-VERIFY: any AI output you rejected or changed. One correction made inside the extraction, by the AI tool on re-reading its own draft, is in the [devlog](devlog/2026-11-18-three-over-n-is-not-the-bound.md).
 
 ## What the AI did
 
@@ -49,7 +51,7 @@ The text, code, tests and documents in this repository were written by an AI cod
 - The skill was **not** loaded in a live Codex session, and the subagent definition was not run as a subagent in a live Claude Code session by the author of this extraction: only the documented file formats and locations were checked.
 - The excuses table is distilled from the maintainer's own use of agents. The incidents behind it are not published and cannot be checked from this repository.
 - Behaviour on macOS, on Linux outside CI and on Python versions other than 3.12 was not tested locally.
-- No human has read the AI-written text and code line by line unless the maintainer states so above. KEMAL-VERIFY.
+- The maintainer states that he reviewed and checked all changes; he has not stated that he read the text and code line by line, so this record does not claim a line-by-line human review. KEMAL-VERIFY.
 
 ## Authorship in commits
 
@@ -57,7 +59,7 @@ AI involvement is marked with an `Assisted-by: Claude Code` trailer in commits (
 
 ## Copyright note
 
-Copyright rests on human creative contribution. KEMAL-VERIFY: state in one sentence what you contributed (for example the idea and the rule, the requirements, the publication decisions, selection and approval). `Interpretation:` Purely machine-generated passages may not be protected; this project does not claim otherwise.
+Copyright rests on human creative contribution. The maintainer's statement of 2026-11-18 (conversation): his contribution is the idea and the rule, and the direction of the work ("I directed, the AI wrote"); the text was written by AI tools (Claude Code, Codex) under his direction, and nothing here is claimed as human-written. `Interpretation:` Purely machine-generated passages may not be protected; this project does not claim otherwise.
 
 ## Limits of this record
 
