@@ -24,6 +24,6 @@ An independent read of the repository later the same day found that the sentence
 
 ## Evidence
 
-- Commit: `7456599` (the example in its final form), `95358e2` (the test that pins the cited lines)
-- Test: `tests/test_examples.py::TestWorkedExample::test_review_cites_the_lines_it_names`
+- Commits: `7456599` (the example as first added), `95358e2` (the test that pins the cited lines), `7d099be` (the `retries=0` finding added to the review)
+- Tests: `tests/test_examples.py::TestWorkedExample::test_review_cites_the_lines_it_names`, `tests/test_examples.py::TestWorkedExample::test_zero_retries_crashes_as_the_review_says`
 - Rule: the last row of the excuses table in `skills/prove-it-review/SKILL.md`

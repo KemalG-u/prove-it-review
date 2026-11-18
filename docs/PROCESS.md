@@ -18,7 +18,7 @@ Stage boundaries are a judgement, not derived from gaps in activity: the whole e
 
 ## Timeline
 
-Dates are author dates from the git history of this repository. Commits were created in logical groups as the files were written, so the commit times (17:02 to 19:21 on 2026-11-18 for the commits listed below, UTC+3, local time of the author's machine; later commits of the review round are in `git log`) show when the groups were committed, not an independent record of effort.
+Dates are author dates from the git history of this repository. Commits were created in logical groups as the files were written, so the commit times (they are in `git log`; the author's machine runs on UTC+3) show when the groups were committed, not an independent record of effort.
 
 | Date | Event | Evidence |
 |---|---|---|
@@ -30,7 +30,7 @@ Dates are author dates from the git history of this repository. Commits were cre
 | 2026-11-18 | Skill text corrected: the 3/n shortcut was quoted as if it were the exact bound | commit `ca68e34`, [devlog](devlog/2026-11-18-three-over-n-is-not-the-bound.md) |
 | 2026-11-18 | Decisions, devlog entries, AI-use statement, changelog | commits `f81a0fd`, `6141d5e`, `ddc6be6`, `6ad60f7` |
 | 2026-11-18 | Process overview and first generated metrics | commits `b7a0c3b`, `37ebc1b` |
-| 2026-11-18 | Privacy and secret check, metrics regenerated, final scans recorded, positive-control note corrected | commits `56007ef`, `825b552`, `2b90111`, `8ee0c14` |
+| 2026-11-18 | Privacy and secret check, metrics regenerated, scans recorded, positive-control note corrected | commits `56007ef`, `825b552`, `2b90111`, `8ee0c14` |
 | 2026-11-18 | Renamed from `adversarial-review` to `prove-it-review` after the name search; maintainer's answers recorded; metrics regenerated | commits `cc3753b`, `c4c1957`, `860f7b9` |
 | 2026-11-18 | Fixes after the independent read: calculator output for large n, self-contained skill folder, changelog regenerated, AI-use wording, example review, generic tool names | commits `fa6cb02`, `f1a2011`, `db5585f`, `2f73d36`, `7d099be`, `d7a4b47`; the rest of the round is in `git log` |
 
@@ -51,7 +51,7 @@ History option: the repository was created fresh for the extraction and its real
 |---|---|---|---|
 | Tests | `python -B -m unittest discover -s tests` | See [METRICS.md](METRICS.md): all tests run and pass, none skipped (run on Windows, Python 3.12) | 2026-11-18 |
 | README example in the repository | `python skills/prove-it-review/scripts/sample_bound.py 40` | Output identical to the block shown in the README (7.2 % bound, 7.5 % shortcut) | 2026-11-18 |
-| Clean clone | `git clone` of this repository at `d7a4b47` into an empty folder, then `python -B skills/prove-it-review/scripts/sample_bound.py 40` and `python -B -m unittest discover -s tests` | README output identical; all tests OK (the count is in [METRICS.md](METRICS.md)); commits after `d7a4b47` change documents only | 2026-11-18 |
+| Clean clone | `git clone` of this repository at `d7a4b47` into an empty folder, then `python -B skills/prove-it-review/scripts/sample_bound.py 40` and `python -B -m unittest discover -s tests` | README output identical; all tests OK (the count is in [METRICS.md](METRICS.md)). What changed after `d7a4b47` is shown by `git diff --stat d7a4b47 HEAD` | 2026-11-18 |
 | Worked example | `python -B -m unittest -v` in `examples/sample-delivery/` | 1 test, OK; the review's other commands are run by `tests/test_examples.py` | 2026-11-18 |
 | CHANGELOG | `git cliff --tag v0.1.0 --output CHANGELOG.md` (git-cliff 2.14.2), run twice | The file is generated, not edited by hand; the second run gave an identical file. Compared with `git log --format=%s`: every `feat` and `fix` commit is listed (without the type prefix) and `docs`, `chore`, `ci` and `test` commits are skipped by the `cliff.toml` rules. `cliff.toml` maps the early name `adversarial-review` to `prove-it-review` in commit subjects | 2026-11-18 |
 | Secret and privacy scans | see [PRIVACY-CHECK.md](PRIVACY-CHECK.md) | See that file | 2026-11-18 |

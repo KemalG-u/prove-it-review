@@ -20,7 +20,7 @@ The text, code, tests and documents in this repository were written by an AI cod
 ## What the human did
 
 - Decided: that this skill is published, under Apache-2.0 with the copyright line in `NOTICE` (a standing publication decision of 2026-11-18). The three design decisions in [decisions/](decisions/) were drafted by the AI tool and are marked `proposed` until the maintainer confirms them. KEMAL-VERIFY: which of them you confirm, and which other decisions were yours.
-- Decided, by his own statement of 2026-11-18: the rule and the idea behind the skill ("look at it adversarially, prove it"), and the name `prove-it-review`, chosen after the name search showed the first candidate name to be crowded ([PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 4).
+- Decided, by his own statement of 2026-11-18: the rule and the idea behind the skill (paraphrase: look at the work adversarially and demand proof), and the name `prove-it-review`, chosen after the name search showed the first candidate name to be crowded ([PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 4).
 - Stated, 2026-11-18: this is a personal project; no employer or client code, data or work time was used (his answer "yes"; recorded in [PRIVACY-CHECK.md](PRIVACY-CHECK.md) section 4).
 - Reviewed: the maintainer reviewed and checked all changes; he wrote no code, and all code and documents were written by AI tools (maintainer's statement, 2026-11-18). KEMAL-VERIFY: which files he read and how closely.
 - Ran and checked: the maintainer works by checking the changes (statement above). Whether he ran the tests himself is not stated: KEMAL-VERIFY. The tests, the scans and the example were run by the AI tool (see below).
