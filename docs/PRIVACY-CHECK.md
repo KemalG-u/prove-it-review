@@ -71,4 +71,4 @@ A fresh-context reviewer reads the candidate commit adversarially; it is an addi
 | GitHub dependency graph SBOM export (Apache-2.0 compatibility of dependencies) | pending |
 | Secret scans re-run on the published history | pending |
 | `CHANGELOG.md` | generated for the planned tag `v0.1.0` with git-cliff 2.14.2; regenerate on release day |
-| Scans of the working tree after this file was added | pending (filled in the commit that adds this section's final counts) |
+| Scans after this file and the regenerated METRICS.md were added | done at `825b552` (19 commits): Betterleaks git and dir mode 0 findings; TruffleHog git mode 0 (62 chunks, 105,219 bytes) and filesystem mode 0 (167 chunks, 272,370 bytes), 0 verified, 0 unverified; `kontrol.py --kati` exit code 0 with 0 missing standard files; with the 7 terms, 25 term hits of the same kinds as in section 3 (name and brand, GitHub user name, `KEMAL-VERIFY` marker). The text of this row was added after these scans |

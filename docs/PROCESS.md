@@ -44,6 +44,7 @@ History option: the repository was created fresh for the extraction and its real
 |---|---|---|---|
 | Tests | `python -B -m unittest discover -s tests` | See [METRICS.md](METRICS.md): all tests run and pass, none skipped (run on Windows, Python 3.12) | 2026-11-18 |
 | README example in the repository | `python scripts/sample_bound.py 40` | Output identical to the block shown in the README (7.2 % bound, 7.5 % shortcut) | 2026-11-18 |
+| Clean clone | `git clone` of this repository into an empty folder, then `python -B scripts/sample_bound.py 40` and `python -B -m unittest discover -s tests` | README output identical; 21 tests, OK (the count is also in [METRICS.md](METRICS.md)) | 2026-11-18 |
 | Worked example | `python -B -m unittest -v` in `examples/sample-delivery/` | 1 test, OK; the review's other commands are run by `tests/test_examples.py` | 2026-11-18 |
 | CHANGELOG | `git cliff --tag v0.1.0 --output CHANGELOG.md` (git-cliff 2.14.2) | Output compared with `git log --format=%s`: the three `feat` and the one `fix` commit are listed (without the type prefix); `docs`, `chore`, `ci` and `test` commits are skipped by the `cliff.toml` rules | 2026-11-18 |
 | Secret and privacy scans | see [PRIVACY-CHECK.md](PRIVACY-CHECK.md) | See that file | 2026-11-18 |
